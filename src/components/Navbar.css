@@ -1,0 +1,228 @@
+/* ============================================
+   NAVBAR — Frosted Glass Apple-Style Light & Dark
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-base);
+  background: transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1001;
+}
+
+.navbar__logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent);
+  transition: transform var(--transition-base);
+}
+
+.navbar__logo:hover .navbar__logo-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.navbar__logo-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.navbar__link {
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 1px;
+  background: var(--color-text-primary);
+  transition: transform var(--transition-base);
+}
+
+.navbar__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navbar__link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ---------- Navbar Actions (Theme Toggle & Hamburger) ---------- */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1001;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.theme-toggle:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: scale(1.08);
+  border-color: var(--color-border-hover);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle__icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.theme-toggle:hover .theme-toggle__icon {
+  transform: rotate(20deg);
+}
+
+/* Hamburger Toggle */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.navbar__hamburger-line {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--color-text-primary);
+  border-radius: 2px;
+  transition: all var(--transition-base);
+}
+
+.navbar__toggle--active .navbar__hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 5px);
+}
+
+.navbar__toggle--active .navbar__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar__toggle--active .navbar__hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -5px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-xl);
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
+  }
+
+  .navbar__links--open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navbar__link {
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+}
+
+/* ---------- Dark Mode Overrides ---------- */
+[data-theme="dark"] .navbar--scrolled {
+  background: rgba(12, 12, 14, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #f5f5f7;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  [data-theme="dark"] .navbar__links {
+    background: rgba(10, 10, 12, 0.97);
+  }
+}

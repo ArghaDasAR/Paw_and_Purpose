@@ -1,0 +1,63 @@
+/* ============================================
+   ABOUT SECTION — Light Mode
+   ============================================ */
+
+.about-section {
+  background: var(--color-surface);
+  position: relative;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.values-grid > :last-child:nth-child(3n - 1) {
+  grid-column: 2 / 3;
+}
+
+.value-card {
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  perspective: 1000px;
+  will-change: transform;
+  background: var(--color-bg);
+}
+
+.value-card__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+  transition: transform var(--transition-base);
+}
+
+.value-card:hover .value-card__icon { transform: rotateY(180deg) scale(1.1); }
+.value-card__icon svg { width: 100%; height: 100%; }
+
+.value-card h3 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.value-card p {
+  font-size: var(--text-sm);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .values-grid > :last-child:nth-child(3n - 1) { grid-column: auto; }
+}
+
+@media (max-width: 640px) {
+  .values-grid { grid-template-columns: 1fr; gap: var(--space-md); }
+}
