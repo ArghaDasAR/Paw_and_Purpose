@@ -29,7 +29,7 @@ The project combines a minimalist design approach with modern frontend developme
 * 🐶 Pet-centered content and sections
 * 🧭 Simple and intuitive navigation
 * ⚡ Fast frontend experience
-* 🌙 UI designed with readability and accessibility in mind
+* 🌙 Readable and user-friendly interface
 * 💻 Modern React-based architecture
 * 🚀 Deployed using Vercel
 
@@ -72,7 +72,7 @@ Paw_and_Purpose/
 
 ## ⚙️ Getting Started
 
-Follow the steps below to run the project locally.
+Follow these steps to run the project locally.
 
 ### 1. Clone the repository
 
@@ -122,23 +122,6 @@ The main goals behind Paws & Purpose are to:
 
 ---
 
-## 📸 Screenshots
-
-You can add screenshots of the website here to give visitors an immediate visual preview.
-
-```md
-![Paws & Purpose Screenshot](./public/screenshot.png)
-```
-
-For the best GitHub presentation, consider adding screenshots of:
-
-* 🏠 Homepage
-* 🐾 Main pet section
-* 📱 Mobile responsive view
-* 🌙 Dark/light interface, if applicable
-
----
-
 ## 🔮 Future Improvements
 
 Some potential improvements for future versions include:
@@ -160,57 +143,25 @@ Some potential improvements for future versions include:
 
 Building Paws & Purpose helped me strengthen my understanding of:
 
-**React**
+### React
 
 * Component-based architecture
 * State and UI management
 * Reusable components
 
-**Frontend Development**
+### Frontend Development
 
 * Responsive layouts
 * Modern CSS
 * Interactive UI elements
 * Mobile-first design considerations
 
-**Development Workflow**
+### Development Workflow
 
 * Git & GitHub
 * Project structure
 * Vite-based development
 * Deployment with Vercel
-
----
-
-## 🤝 Contributing
-
-Contributions, suggestions, and ideas are welcome.
-
-To contribute:
-
-```bash
-git fork https://github.com/ArghaDasAR/Paw_and_Purpose
-```
-
-Create a new branch:
-
-```bash
-git checkout -b feature/your-feature
-```
-
-Commit your changes:
-
-```bash
-git commit -m "Add: new feature"
-```
-
-Push your branch:
-
-```bash
-git push origin feature/your-feature
-```
-
-Then open a Pull Request.
 
 ---
 
@@ -224,7 +175,7 @@ This project is currently available for educational and portfolio purposes.
 
 ### Argha Das
 
-Frontend Developer • UI/UX Enthusiast • Student Developer
+**Frontend Developer • UI/UX Enthusiast • Student Developer**
 
 GitHub: [@ArghaDasAR](https://github.com/ArghaDasAR)
 
